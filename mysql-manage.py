@@ -6,10 +6,11 @@ from prettytable import PrettyTable
 from config import HostUtil, DatabaseUtil
 from utils import gen_password
 
-usage = """List HOSTS: python3 mysql-manage.py hosts
-Add HOST: python3 mysql-manage.py add-host
-List Databases for host: python3 mysql-manage.py {hostname} list
-Create Database for host: python3 mysql-manage.py {hostname} create {database_name}
+usage = """Usage:
+    List HOSTS: mm hosts
+    Add   HOST: mm add-host
+    List   DBs: mm {hostname} list
+    Create  DB: mm {hostname} create {database_name}
 """
 
 
