@@ -1,10 +1,9 @@
 import os
 import json
 from prettytable import PrettyTable
-from config import load_data_path
 
 if __name__ == '__main__':
-    database_json_path = load_data_path() + "/databases.json"
+    database_json_path = "databases.json"
     data = json.load(open(database_json_path))
     x = PrettyTable(field_names=["Name", "Username", "Password"])
     x.align["Name"] = "l"

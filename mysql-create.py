@@ -1,7 +1,7 @@
 import pymysql
 import sys
 from utils import gen_password
-from config import load_config, load_data_path
+from config import load_config
 import json
 
 
@@ -57,13 +57,13 @@ def database_create(__db_name__):
           % (__db_name__, __db_name__, db_pass)
           )
     # 写入 databases.json 配置文件
-    databases_json = json.load(open(load_data_path() + '/databases.json'))
+    databases_json = json.load(open('databases.json'))
     databases_json['databases'].append({
         'name': __db_name__,
         'username': __db_name__,
         'password': db_pass
     })
-    json_file = open(load_data_path() + "/databases.json", "w")
+    json_file = open("databases.json", "w")
     json.dump(databases_json, json_file, indent=4, ensure_ascii=False)
     json_file.close()
 
