@@ -3,7 +3,10 @@ import os
 
 
 def load_data_path():
-    return os.path.expanduser('~') + '/.mysql-management'
+    data_path = os.path.expanduser('~') + '/.mysql-management'
+    if not os.path.exists(data_path):
+        os.mkdir(data_path)
+    return data_path
 
 
 class HostUtil:
